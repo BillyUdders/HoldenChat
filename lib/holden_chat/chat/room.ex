@@ -1,6 +1,8 @@
 defmodule HoldenChat.Chat.Room do
   # This turns this module into a resource
-  use Ash.Resource, domain: HoldenChat.Chat, data_layer: Ash.DataLayer.Ets
+  use Ash.Resource,
+    domain: HoldenChat.Chat,
+    data_layer: Ash.DataLayer.Ets
 
   actions do
     defaults [:read]
@@ -18,7 +20,6 @@ defmodule HoldenChat.Chat.Room do
 
       change set_attribute(:status, :closed)
       # A custom change could be added like so:
-      #
       # change MyCustomChange
       # change {MyCustomChange, opt: :val}
     end
@@ -28,7 +29,6 @@ defmodule HoldenChat.Chat.Room do
     uuid_primary_key :id
 
     attribute :title, :string do
-      constraints max_length: 10
       allow_nil? false
       public? true
     end
