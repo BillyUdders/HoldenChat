@@ -99,6 +99,12 @@ defmodule HoldenChatWeb.Router do
     scope "/" do
       pipe_through :browser
 
+      scope "/rooms" do
+        live "/", RoomLive
+        live "/create", CreateRoomLive
+        live "/:room_id", EditRoomLive
+      end
+
       oban_dashboard("/oban")
     end
   end
