@@ -2,7 +2,7 @@ defmodule HoldenChat.Chat.Base do
   defmacro __using__(opts) do
     merged_opts =
       Keyword.merge(
-        [domain: HoldenChat.Base, data_layer: Ash.DataLayer.Ets],
+        [domain: HoldenChat.Chat, data_layer: Ash.DataLayer.Ets],
         opts
       )
 

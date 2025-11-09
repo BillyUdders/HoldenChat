@@ -1,11 +1,7 @@
 defmodule HoldenChat.Chat.User do
-  use HoldenChat.Chat.Base,
-    domain: HoldenChat.Chat,
-    data_layer: Ash.DataLayer.Ets
+  use HoldenChat.Chat.Base
 
   actions do
-    defaults [:read]
-
     create :signup do
       accept [:username, :password]
     end
