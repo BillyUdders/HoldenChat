@@ -61,7 +61,8 @@ config :spark,
 config :holden_chat,
   ecto_repos: [HoldenChat.Repo],
   generators: [timestamp_type: :utc_datetime],
-  ash_domains: [HoldenChat.Accounts, HoldenChat.Chat]
+  ash_domains: [HoldenChat.Accounts, HoldenChat.Chat],
+  base_resources: [HoldenChat.Chat.Base]
 
 # Configures the endpoint
 config :holden_chat, HoldenChatWeb.Endpoint,

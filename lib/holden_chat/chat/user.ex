@@ -1,5 +1,5 @@
 defmodule HoldenChat.Chat.User do
-  use Ash.Resource,
+  use HoldenChat.Chat.Base,
     domain: HoldenChat.Chat,
     data_layer: Ash.DataLayer.Ets
 
@@ -17,8 +17,6 @@ defmodule HoldenChat.Chat.User do
   end
 
   attributes do
-    uuid_primary_key :id
-
     attribute :username, :string do
       allow_nil? false
       public? true
@@ -27,11 +25,6 @@ defmodule HoldenChat.Chat.User do
     attribute :password, :string do
       allow_nil? false
       public? false
-    end
-
-    attribute :created_date, :date do
-      allow_nil? false
-      default {Date, :utc_today, []}
     end
   end
 end

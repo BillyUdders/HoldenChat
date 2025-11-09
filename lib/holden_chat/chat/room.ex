@@ -1,12 +1,10 @@
 defmodule HoldenChat.Chat.Room do
   # This turns this module into a resource
-  use Ash.Resource,
+  use HoldenChat.Chat.Base,
     domain: HoldenChat.Chat,
     data_layer: Ash.DataLayer.Ets
 
   actions do
-    defaults [:read]
-
     create :open do
       accept [:title]
     end
@@ -26,8 +24,6 @@ defmodule HoldenChat.Chat.Room do
   end
 
   attributes do
-    uuid_primary_key :id
-
     attribute :title, :string do
       allow_nil? false
       public? true
