@@ -24,6 +24,11 @@ defmodule HoldenChatWeb.Router do
 
   scope "/", HoldenChatWeb do
     pipe_through :browser
+    live "/rooms", RoomLive.Index, :index
+    live "/rooms/new", RoomLive.Form, :new
+    live "/rooms/:id/edit", RoomLive.Form, :edit
+    live "/rooms/:id", RoomLive.Show, :show
+    live "/rooms/:id/show/edit", RoomLive.Show, :edit
 
     ash_authentication_live_session :authenticated_routes do
       # in each liveview, add one of the following at the top of the module:
