@@ -24,6 +24,7 @@ defmodule HoldenChatWeb.Router do
 
   scope "/", HoldenChatWeb do
     pipe_through :browser
+
     live "/rooms", RoomLive.Index, :index
     live "/rooms/new", RoomLive.Form, :new
     live "/rooms/:id/edit", RoomLive.Form, :edit
