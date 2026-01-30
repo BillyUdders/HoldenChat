@@ -31,6 +31,12 @@ defmodule HoldenChatWeb.Router do
     live "/users/:id", UserLive.Show, :show
     live "/users/:id/show/edit", UserLive.Show, :edit
 
+    live "/messages", MessageLive.Index, :index
+    live "/messages/new", MessageLive.Form, :new
+    live "/messages/:id/edit", MessageLive.Form, :edit
+    live "/messages/:id", MessageLive.Show, :show
+    live "/messages/:id/show/edit", MessageLive.Show, :edit
+
     live "/rooms", RoomLive.Index, :index
     live "/rooms/new", RoomLive.Form, :new
     live "/rooms/:id/edit", RoomLive.Form, :edit

@@ -4,5 +4,6 @@ defmodule HoldenChat.Chat do
   resources do
     resource HoldenChat.Chat.Room
     resource HoldenChat.Chat.User
+    resource HoldenChat.Chat.Message
   end
 end
